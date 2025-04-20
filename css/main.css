@@ -1,0 +1,183 @@
+/* main */
+.main_section {
+    height: 100vh;
+    /* background: #EEAECA;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); */
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    animation: wave 5s ease-in-out infinite;
+}
+@keyframes wave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    transform: translateY(-80px);
+}
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation: waveFlow 8s ease-in-out infinite;
+}
+  
+.wave.front {
+    animation-delay: 0s;
+}
+
+.wave.back {
+    animation-delay: 2s;
+    opacity: 0.6;
+}
+  
+@keyframes waveFlow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+  
+.main_section h2 {
+    font-size: 65px;
+    font-weight: 600;
+    padding-top: 38vh;
+    padding-bottom: 8vh;
+}
+.main_section p {
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+/* about */
+.about_section {
+    height: 100vh;
+}
+.about_section h2 {
+    padding-top: 15vh;
+    padding-bottom: 6vh;
+}
+.about_section .profile_area {
+    display: flex;
+}
+.about_section .profile_img img{
+    width: 75%;
+    margin-bottom: 3vh;
+    border-radius: 6px;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+}
+.about_section .profile_list {
+    display: flex;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.about_section .profile_list .label{
+    min-width: 80px;
+}
+.about_section .profile_list .value {
+    color: #727272;
+}
+.about_section .profile_desc {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.about_section .profile_desc h3 {
+    background: #8ec5fc70;
+    background-size: 200% auto;
+    color: #172029;            
+    box-shadow: 0 0 20px #eee;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat';
+}
+.about_section .profile_desc p{
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+.about_section .profile_desc b {
+    font-size: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.about_section .profile_desc .img_list {
+    display: flex;
+}
+.about_section .profile_desc .img_list img {
+    width: 70%;
+    margin: 0 auto;
+}
+.about_section .education_inn {
+    font-size: 18px;
+}
+.about_section .education_inn .text_list li{
+    margin-bottom: 11px;
+}
+/* work */
+.work_section {
+    /* height: 100vh; */
+    background: rgba(100, 150, 140, 0.04);
+    background: url(../img/work/phrase.svg) center/contain no-repeat fixed;
+}
+.work_section h2 {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+.work_section .work_list{
+    /* display: grid;
+    grid-template-columns: repeat(2,1fr); */
+    gap: 5vh;
+}
+.work_section .work_list li {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 30px;
+}
+.work_section .work_list a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 45%;
+    flex-shrink: 0;
+}
+.work_section .work_list a img {
+    width: 100%;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+.work_section .work_list .desc {
+    font-size: 19px;
+    font-weight: 500;
+    align-self: center;
+    flex: 1;
+}
+.work_section .work_list .desc p {
+    margin-bottom: 10px;
+}
+.work_section .work_list .desc .title {
+    font-size: 22px;
+}
+/* 이루다 | 사내 포탈 거버넌스, 13인치까지 지원, 적응형, FIGMA, scss, 기여도 100%, 추후 테마 적용을 위한 변수 처리 선 작업, 웹 표준 및 웹 접근성 준수한 공통 검토넌트 스타일 가이드 작성 */
+/* 철도공사 | 고객사 포탈 구축, 오픈 소스 라이브러리 활용, FIGMA, 기여도 100% */
+/* 케이큐어 | 고객사 포탈 구축, 오픈 소스 라이브러리 활용, FIGMA, XD , 웹 접근성 인증 마크 경험 , 기여도 50% */
+/* 감염병 키스트 | 실무 첫 프로젝트, XD, 기여도 30% */
+
+/* 실무 전 작업물 */
+/* 금호석유화학 */
+/* marithe */
