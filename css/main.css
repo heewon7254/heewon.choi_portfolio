@@ -61,7 +61,7 @@
 
 /* about */
 .about_section {
-    height: 100vh;
+    /* height: 100vh; */
 }
 .about_section h2 {
     padding-top: 15vh;
@@ -178,6 +178,135 @@
 /* 케이큐어 | 고객사 포탈 구축, 오픈 소스 라이브러리 활용, FIGMA, XD , 웹 접근성 인증 마크 경험 , 기여도 50% */
 /* 감염병 키스트 | 실무 첫 프로젝트, XD, 기여도 30% */
 
+/* 실무 전 연습 프로젝트 */
+/* 행안부 */
+/* teambox */
+
+/* 간단한 프로젝트 */
+/* 현대글로비스 */
+/* 공통기능개발_ver2 */
+
 /* 실무 전 작업물 */
 /* 금호석유화학 */
 /* marithe */
+
+/* 개인 사이드 프로젝트 */
+/* HIMART */
+/* 개인 포폴 */
+
+
+/* js */
+/* 
+// 접근성 관련 포커스 강제 이동
+function accessibilityFocus() {
+  
+  $(document).on('keydown', '[data-focus-prev], [data-focus-next]', function(e){
+    var next = $(e.target).attr('data-focus-next'),
+        prev = $(e.target).attr('data-focus-prev'),
+        target = next || prev || false;
+    
+    if(!target || e.keyCode != 9) {
+      return;
+    }
+    
+    if( (!e.shiftKey && !!next) || (e.shiftKey && !!prev) ) {
+      setTimeout(function(){
+        $('[data-focus="' + target + '"]').focus();
+      }, 1);
+    }
+    
+  });
+  
+}
+
+function tooltip() {
+  var openBtn = '[data-tooltip]',
+      closeBtn = '.tooltip-close';
+  
+  function getTarget(t) {
+    return $(t).attr('data-tooltip');
+  }
+  
+  function open(t) {
+    var showTarget = $('[data-tooltip-con="' + t + '"]');
+    showTarget.addClass('on').focus();
+    showTarget.find('.tooltip-close').data('activeTarget', t);
+  }
+  
+  function close(t) {
+    var activeTarget = $('[data-tooltip-con="' + t + '"]');
+    activeTarget.removeClass('on');
+    $('[data-tooltip="' + t + '"]').focus();
+  }
+  
+  $(document)
+    .on('click', openBtn, function(e){
+      e.preventDefault();
+      open(getTarget(e.target));
+    })
+    .on('click', closeBtn, function(e) {
+      e.preventDefault();
+
+      if(e.target != undefined){
+          close($(this).data('activeTarget'));
+      }
+    })
+  
+}
+
+
+$(document).ready(function(){
+  
+  tooltip();
+  accessibilityFocus();
+  
+}); 
+
+
+//웹접근성 메인페이지 팝업 안에서만 포커스 도는 코드
+$(document).on('keydown', function(e) {
+    const focusable = $('.info_popup_box')
+        .find('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])')
+        .filter(':visible');
+    const first = focusable.first()[0];
+    const last = focusable.last()[0];
+    if (e.key === 'Tab') {
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    }
+});
+
+    setTimeout( function () {
+        if ($('.info_popup_box').children('.popup_con').children().find('a').length > 0) {
+            $('.info_popup_box').children('.popup_con').children().find('a').attr({tabindex:'1', title:'새창열림', style:'font-weight : bold; display: inline-block;'});
+            }
+    } ,100);
+
+// html
+// data-tooltip-con="googlepop" data-focus="googlepop" data-focus-prev="googlepop-close"
+<div class="kc_layer_popup" id="GgAuth" tabindex="0" data-tooltip-con="googlepop" data-focus="googlepop" data-focus-prev="googlepop-close">
+	<div class="kc_popup_box second_certify">
+		<div class="title">
+			<p>2차 인증</p>
+		</div>
+		<div class="popup_con">
+			<input type="text" id="code" placeholder="인증코드를 입력해주세요" class="user_int" title="인증코드 입력">
+			<a href="javascript:void(0)" onclick="fnFirstStep();">키를 미발급 받으셨나요</a>
+			<!-- <a href="javascript:void(0)" onclick="fnFirstStep();">핸드폰 변경 또는 분실 되셨나요</a> -->
+		</div>
+		<div class="f_l_btn">
+			<a href="javascript:void(0)" class="f_bc_d_gray_line kc_close">닫기</a>
+			<a href="javascript:void(0)" class="f_bc_blue_line" onclick="fnCheck();" id="GgCheck">확인</a>
+		</div>
+		<a href="javascript:void(0)" class="btn kc_close tooltip-close" data-focus="googlepop-close" data-focus-next="googlepop">
+			<span class="blind">팝업 닫기 버튼</span>
+		</a>
+	</div>
+</div>
+*/
+

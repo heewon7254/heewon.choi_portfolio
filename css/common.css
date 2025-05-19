@@ -95,11 +95,15 @@ header {
     /* background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1); */
     background: transparent;
+	transform: translateY(0);
 }
 header.bg {
     background: rgba(255, 255, 255, 0.6);
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
+}
+header.hide {
+	transform: translateY(-100%);
 }
 header .container {
     max-width: 1440px;
@@ -154,4 +158,3 @@ section h2 {
     z-index: 500;
     mix-blend-mode: difference;
 }
-  
